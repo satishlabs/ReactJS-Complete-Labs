@@ -1,15 +1,16 @@
-
-import { Component } from 'react';
 import './App.css';
 
-class App extends Component {
-  render(){
+const App = () =>{
+  
+  let companyName = "Satish Labs";
+  const courseName = "ReactJS"
+
   return (
     <div className="myclass">
-      <p className="myclass1">Welcome to SatishLabs!</p>
-      <p className="myclass2">You are learning ReactJS from Satish Prasad</p>
+      <p className="myclass1">Welcome to {companyName}!</p>
+      <p className="myclass2">You are learning {courseName} from Satish Prasad</p>
     </div>
   );
 }
-}
+
 export default App;
