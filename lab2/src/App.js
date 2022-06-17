@@ -1,25 +1,20 @@
-import logo from './logo.svg';
+import { Component } from 'react';
 import './App.css';
+import Student from './student/Student';
 
-function App() {
+class App extends Component {
+  state ={
+    myheader: "Welcome to SatishLabs",
+
+  }
+  render(){
+    console.log("I am app")
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="myheader">
+    <p>{this.state.myheader}</p>
+    <Student/>
     </div>
   );
 }
-
+}
 export default App;
