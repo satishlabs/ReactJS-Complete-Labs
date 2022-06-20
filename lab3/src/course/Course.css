@@ -3,6 +3,11 @@
     color: blue;
     font-size: 15px;
     border: 2px solid gold;
-
     padding: 15px;
+}
+
+.mybutton{
+    font-size: 25px;
+    color: white;
+    background-color: green;
 }
