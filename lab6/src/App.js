@@ -106,6 +106,10 @@ class App extends Component{
             </tbody>
           </table>
         </div>
+        <div className="mydata">
+        <h3><u>5. Array of Object types:</u></h3>
+        
+        </div>
       </div>
     )
   }
