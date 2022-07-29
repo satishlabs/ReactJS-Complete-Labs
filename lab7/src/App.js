@@ -70,6 +70,9 @@ class App extends Component{
     
   
       let displayCourses = (
+        <div>
+          <h2>Course Details of Student : {mysid}</h2>
+       
         <table>
         <thead>
           <tr>
@@ -83,6 +86,7 @@ class App extends Component{
           {tempCourseToDisplay}
         </tbody>
       </table>
+      </div>
       );
 
 
@@ -110,6 +114,8 @@ class App extends Component{
     
   
       let displayCourses = (
+        <div>
+           <h2>Course Details of Student : {mystudent.studentId}</h2>
         <table>
         <thead>
           <tr>
@@ -123,6 +129,7 @@ class App extends Component{
           {tempCourseToDisplay}
         </tbody>
       </table>
+      </div>
       );
     this.setState({
       mycoursesToDisplay:displayCourses
