@@ -5,7 +5,7 @@ import './App.css';
 class App extends Component{
   state = {
     mycoursesToDisplay:[],
-
+   
     mystudentsData:[
       {
         studentId:1001,
@@ -48,6 +48,8 @@ class App extends Component{
 
   showCoruseInfo =(mysid) =>{
     console.log("Student Id: "+mysid);
+
+  
   let filterStudent =   this.state.mystudentsData.filter(
       (mystudent) =>mystudent.studentId === mysid
     );
@@ -65,10 +67,69 @@ class App extends Component{
         </tr>
       )
     )
+    
+  
+      let displayCourses = (
+        <table>
+        <thead>
+          <tr>
+            <th>CID</th>
+            <th>Cname</th>
+            <th>Price</th>
+            <th>Trainer</th>
+          </tr>
+        </thead>
+        <tbody>
+          {tempCourseToDisplay}
+        </tbody>
+      </table>
+      );
+
+
     this.setState({
-      mycoursesToDisplay:tempCourseToDisplay
+      mycoursesToDisplay:displayCourses
     })
+
   }
+
+
+  showCoruseData =(mystudent) =>{
+    console.log("Student Id: "+mystudent.studentId);
+
+    let mycourseList = mystudent.mycourses;
+    let tempCourseToDisplay = mycourseList.map(
+      (mycourse) =>(
+        <tr key={mycourse.cid}>
+          <td>{mycourse.cid}</td>
+          <td>{mycourse.cname}</td>
+          <td>{mycourse.price}</td>
+          <td>{mycourse.trainer}</td>
+        </tr>
+      )
+    )
+    
+  
+      let displayCourses = (
+        <table>
+        <thead>
+          <tr>
+            <th>CID</th>
+            <th>Cname</th>
+            <th>Price</th>
+            <th>Trainer</th>
+          </tr>
+        </thead>
+        <tbody>
+          {tempCourseToDisplay}
+        </tbody>
+      </table>
+      );
+    this.setState({
+      mycoursesToDisplay:displayCourses
+    })
+
+  }
+
   render(){
     console.log("I am App component");
 
@@ -84,6 +145,9 @@ class App extends Component{
           <td>{mystudent.address.state}</td>
           <td>
             <button onClick={this.showCoruseInfo.bind(this,mystudent.studentId)} className="mybutton">Course Info</button>
+          </td>
+          <td>
+            <button onClick={this.showCoruseData.bind(this,mystudent)} className="mybutton">Course Data</button>
           </td>
         </tr>
       )
@@ -107,6 +171,7 @@ class App extends Component{
               <th>City</th>
               <th>State</th>
               <th></th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -115,21 +180,9 @@ class App extends Component{
         </table>
       </div>
 
-
+      <br/><br/>
       <div className="mydata">
-        <table>
-          <thead>
-            <tr>
-              <th>CID</th>
-              <th>Cname</th>
-              <th>Price</th>
-              <th>Trainer</th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.state.mycoursesToDisplay}
-          </tbody>
-        </table>
+       {this.state.mycoursesToDisplay}
       </div>
       </div>
     )
