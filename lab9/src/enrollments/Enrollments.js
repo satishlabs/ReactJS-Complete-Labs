@@ -18,24 +18,34 @@ class Enrollment extends Component{
         if(this.state.enrollmentShow === true){
             myenrollmentToDisplay = this.state.enrollmentList.map(
                 (myenrollments) =>(
-                    <table className="table table-striped table-light table-bordered">
-                        <tbody>
-                            <tr>
-                                <td><h6>{myenrollments.leadId}</h6></td>
-                                <td><h6>{myenrollments.sid}</h6></td>
-                                <td><h6>{myenrollments.course}</h6></td>
-                                <td><h6>{myenrollments.feepaid}</h6></td>
-                                <td><h6>{myenrollments.feebal}</h6></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <tr key={myenrollments.leadId}>
+                        <td>{myenrollments.leadId}</td>
+                        <td>{myenrollments.sid}</td>
+                        <td>{myenrollments.course}</td>
+                        <td>{myenrollments.feebal}</td>
+                        <td>{myenrollments.feepaid}</td>
+                    </tr>
                 )
             )
         }
         return(
             <div>
                 <h3>Enrollment Count: {this.state.enrollmentCount}</h3>
-                {myenrollmentToDisplay}
+                <table className="table table-striped table-light table-bordered">
+                        <thead>
+                            <tr>
+                                <th>LeadId</th>
+                                <th>SID</th>
+                                <th>Course</th>
+                                <th>Feepaid</th>
+                                <th>Feebal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {myenrollmentToDisplay}      
+                        </tbody>
+                    </table>
+                        
             </div>
         )
     }
