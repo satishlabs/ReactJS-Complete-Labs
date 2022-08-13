@@ -11,12 +11,14 @@
   color: red;
   border: 2px solid blue;
   border-radius: 5px;
+  background-color: rebeccapurple;
 }
 
 .myblue{
   color:blue;
   border: 5px solid red;
   border-radius: 15px;
+  background-color:aquamarine;
 }
 
 p{
