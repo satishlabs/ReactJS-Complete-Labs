@@ -1,10 +1,14 @@
 
 import './App.css';
+import MyCourses from './MyCourses';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <h1>Welcome to SatishLabs!!!</h1>
+    <div className="container">
+      <h1 className="text-center">Welcome to SatishLabs!!!</h1>
+      <br/>
+      <MyCourses/>
     </div>
   );
 }
