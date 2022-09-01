@@ -2,6 +2,7 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Component } from 'react';
+import Hello from './Hello';
 
 class App extends Component{
 
@@ -24,7 +25,11 @@ class App extends Component{
       <div className="container">
        <h1 className="text-center">Welcome to SatishLabs!!</h1>
        <br/>
-       
+       <Hello/>
+       <br/>
+       <Hello mytrainer="Dande"/>
+       <br/>
+       <Hello mytrainer="Srinivas" mycolor="Pink"/>
       </div>
     );
   }
