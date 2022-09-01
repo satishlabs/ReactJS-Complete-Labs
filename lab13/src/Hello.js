@@ -20,14 +20,18 @@ class Hello extends Component{
         console.log("Hello - getDerivedStateFromProps()");
         console.log("Hello - ",myprops);
         console.log("Hello - ",mystate);
-        return null;
+        return {
+            //message:"Updated Message Here!",
+            trainer: myprops.mytrainer,
+            color: myprops.mycolor
+        };
     }
     render(){
-        console.log("Hello - render()");
-      //  console.log(2,"Hello - ",Hello.displayName);
-       // console.log(3,"Hello - ",Hello.defaultProps);
-       // console.log(4,"Hello - ",this.state);
-      //  console.log(5,"Hello - ",this.props);
+        console.log(1,"Hello - render()");
+        console.log(2,"Hello - ",Hello.displayName);
+        console.log(3,"Hello - ",Hello.defaultProps);
+        console.log(4,"Hello - ",this.state);
+        console.log(5,"Hello - ",this.props);
         return(
             <div className="container">
                 <h3>I am Hello Component !!</h3>
