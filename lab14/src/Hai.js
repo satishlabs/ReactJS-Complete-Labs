@@ -22,7 +22,7 @@ class Hai extends Component{
 
     shouldComponentUpdate(nextProps,nextState){
         console.log("Hai - shouldComponentUpdate()");
-        return true;
+        return false;
     }
 
     getSnapshotBeforeUpdate(prevPorps,prevState){

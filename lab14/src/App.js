@@ -14,7 +14,8 @@ class App extends Component{
 
     this.state = {
       compnayName:"JAVA",
-      courseFlag:true
+      courseFlag:true,
+      errorFlag:false
     }
   };
   static getDerivedStateFromProps(myprops,mystate){
@@ -43,6 +44,34 @@ componentWillUnmount(){
     console.log(4,"App - componentWillUnmount()");
 }
 
+static getDerivedStateFromError(error){
+  console.log("App - getDerivedStateFromError()");
+  return{
+   hasError:true
+  }
+}
+
+componentDidCatch(error,info){
+  console.log("App - componentDidCatch()",error);
+  console.log("App - componentDidCatch()",info);
+  this.state.errorFlag= true;
+}
+
+
+//Deprecated methods
+//componentWillMount(){
+  //console.log("App - componentWillMount()");
+//}
+
+//componentWillReceiveProps(){
+  //console.log("App - componentWillReceiveProps()");
+//}
+
+//componentWillUpdate(){
+  //console.log("App - componentWillUpdate()");
+//}
+
+
   showHideCourses = () =>{
     let mycourseFlag = this.state.courseFlag;
     this.setState({
@@ -52,6 +81,7 @@ componentWillUnmount(){
 
   render(){
     console.log(3,"App - render()");
+    
     let displayCourse = null;
     if(this.state.courseFlag ===true){
       displayCourse = (

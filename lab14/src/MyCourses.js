@@ -11,6 +11,7 @@ class MyCourses extends Component{
         this.state= {
             trainerName:"Srinivas Dande",
             trainerEmail:"sri@gmail.com",
+            errorFlag:false,
             mycourseList :[
                 {cid:101,cname:"Angular",price:15000},
                 {cid:102,cname:"ReactJS",price:12000},
@@ -37,16 +38,49 @@ class MyCourses extends Component{
 
     getSnapshotBeforeUpdate(prevPorps,prevState){
         console.log("MyCourses - getSnapshotBeforeUpdate()");
-        return null;
+        let mysnapshot = {
+            message :"I am a Sanpshot",
+            trainerName: prevState.trainerName,
+            trainerEmail:prevState.trainerEmail,
+        };
+        return mysnapshot;
     }
 
     componentDidUpdate(prevPorps,prevState,mysnapshot){
         console.log("MyCourses - componentDidUpdate()");
+        console.log("MyCourses - ",mysnapshot);
     }
 
     componentWillUnmount(){
         console.log(4,"MyCourses - componentWillUnmount()");
     }
+
+    static getDerivedStateFromError(error){
+        console.log("MyCourses - getDerivedStateFromError()");
+        return{
+         hasError:true
+        }
+      }
+      
+      componentDidCatch(error,info){
+        console.log("MyCourses - componentDidCatch()",error);
+        console.log("MyCourses - componentDidCatch()",info);
+        this.state.errorFlag= true;
+      }
+      
+      
+      //Deprecated methods
+      //componentWillMount(){
+        //console.log("MyCourses - componentWillMount()");
+      //}
+      
+      //componentWillReceiveProps(){
+        //console.log("MyCourses - componentWillReceiveProps()");
+      //}
+      
+      //componentWillUpdate(){
+        //console.log("MyCourses - componentWillUpdate()");
+      //}
 
     render(){
         console.log(3,"MyCourses - render()");
