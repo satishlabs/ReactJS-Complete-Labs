@@ -29,6 +29,20 @@ class MyCourses extends Component{
     componentDidMount(){
         console.log(4,"MyCourses - componentDidMount()");
     }
+    
+    shouldComponentUpdate(nextProps,nextState){
+        console.log("MyCourses - shouldComponentUpdate()");
+        return true;
+    }
+
+    getSnapshotBeforeUpdate(prevPorps,prevState){
+        console.log("MyCourses - getSnapshotBeforeUpdate()");
+        return null;
+    }
+
+    componentDidUpdate(prevPorps,prevState,mysnapshot){
+        console.log("MyCourses - componentDidUpdate()");
+    }
 
     componentWillUnmount(){
         console.log(4,"MyCourses - componentWillUnmount()");
