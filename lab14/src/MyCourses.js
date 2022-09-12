@@ -49,6 +49,7 @@ class MyCourses extends Component{
     componentDidUpdate(prevPorps,prevState,mysnapshot){
         console.log("MyCourses - componentDidUpdate()");
         console.log("MyCourses - ",mysnapshot);
+        //Post this snapshot to server
     }
 
     componentWillUnmount(){
