@@ -1,13 +1,20 @@
 
 import './App.css';
-import { Component } from 'react';
+import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { MyApplicationData } from './appContext';
+import Header from './components/Header';
+import LeadsList from './components/LeadsList';
 
 class App extends Component{
   render(){
     return(
-      <div>
-        <h2>Lab17</h2>
+      <MyApplicationData>
+      <div className="App container">
+      <Header mybrand='Lead Manager'/>
+      <LeadsList/>
       </div>
+      </MyApplicationData>
     )
   }
 }
